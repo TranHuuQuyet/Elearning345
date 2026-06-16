@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: rgba(153, 146, 146, 0.301);
+}
+/* header */
+.around {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  gap: 100px;
+  height: 50px;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 30px;
+  margin: 10px auto;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+}
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.menu-item > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: whitesmoke;
+  width: max-content;
+  height: 35px;
+  border-radius: 35px;
+  padding: 0 10px;
+  color: black;
+}
+
+/* cunghoangdao */
+section {
+  background: rgb(255, 255, 255);
+  height: 500px;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 30px;
+  margin: 10px auto;
+}

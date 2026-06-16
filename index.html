@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elearning456</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="around">
+        <span>TranHuuQuyet</span>
+        <nav class="menu-item">
+          <a href="#cung-hoang-dao">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="20"
+              viewBox="0 -960 960 960"
+              width="20"
+              fill="currentColor"
+            >
+              <path
+                d="M480-80 360-360 80-480l280-120 120-280 120 280 280 120-280 120L480-80Z"
+              />
+            </svg>
+            Cung hoàng đạo
+          </a>
+          <a href="#danh-ba">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="20"
+              viewBox="0 -960 960 960"
+              width="20"
+              fill="currentColor"
+            >
+              <path
+                d="M160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h560q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H160Zm280-320q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm-240 160h480q-36-45-98-72.5T440-340q-80 0-142 27.5T200-240Z"
+              />
+            </svg>
+            Danh bạ</a
+          >
+          <a href="#tra-cuu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="20"
+              viewBox="0 -960 960 960"
+              width="20"
+              fill="currentColor"
+            >
+              <path
+                d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+              />
+            </svg>
+            Tra cứu</a
+          >
+          <a href="#thoi-tiet">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="20"
+              viewBox="0 -960 960 960"
+              width="20"
+              fill="currentColor"
+            >
+              <path
+                d="M240-200q-83 0-141.5-58.5T40-400q0-76 50-132.5T214-599q25-86 97-143.5T480-800q117 0 198.5 81.5T760-520q66 8 113 58.5T920-340q0 58-41 99t-99 41H240Z"
+              />
+            </svg>
+            Thời tiết</a
+          >
+        </nav>
+      </div>
+    </header>
+    <section class="cung-hoang-dao" id="cung-hoang-dao">
+      <h1>Ứng dụng Cung hoàng đạo</h1>
+
+      <label>Nhập ngày tháng năm sinh để tra cứu</label>
+      <div class="birth-date">
+        <!-- Ngày -->
+        <select id="day">
+          <option value="">Ngày sinh</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+        </select>
+
+        <!-- Tháng -->
+        <select id="month">
+          <option value="">Tháng sinh</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+
+        <!-- Năm -->
+        <input
+          type="number"
+          id="year"
+          placeholder="Năm sinh"
+          min="1900"
+          max="2025"
+        />
+      </div>
+      <button type="submit">Tra cứu</button>
+      <div class="ket-qua">
+        <span>Can chi năm sinh:</span>
+        <span>Cung hoàng đạo:</span>
+      </div>
+    </section>
+    <section class="danh-ba" id="danh-ba">
+      <h1>Danh bạ người dùng ngẫu nhiên</h1>
+      <button>Tải danh bạ</button>
+      <div class="user-card">
+        <img src="avatar.jpg" alt="" />
+        <h3>John Smith</h3>
+        <p>john@example.com</p>
+        <span>United States</span>
+      </div>
+    </section>
+    <section class="tra-cuu" id="tra-cuu">
+      <h1>Tra cứu quốc gia.</h1>
+      <input type="text" placeholder="Nhập tên quốc gia" id="" />
+      <button>Tìm kiếm</button>
+    </section>
+    <section class="thoi-tiet" id="thoi-tiet">
+      <h1>Ứng dụng thời tiết thu nhỏ</h1>
+      <span>Tìm kiếm thành phố</span>
+      <input type="text" placeholder="Nhập tên thành phố" id="" />
+      <button>Xem thời tiêt</button>
+    </section>
+    <footer></footer>
+  </body>
+</html>
