@@ -100,3 +100,52 @@ taiDanhbaBtn.addEventListener("click", async () => {
     console.log(Error);
   }
 });
+//tra cuu quoc gia// lỗi API
+const quocgiaInput = document.querySelector("#quoc-gia");
+const timKiem = document.querySelector("#tim-quoc-gia");
+const ketQua = document.querySelector("#ket-qua-tim");
+
+timKiem.addEventListener("click", async () => {
+  const tenQuocgia = quocgiaInput.value.trim();
+  const url = `https://restcountries.com/v3.1/name/${tenQuocgia}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+});
+//thoi tiet mini
+const cityInput = document.querySelector("#city-input");
+const timCity = document.querySelector("#tim-city");
+const ketquaThoitiet = document.querySelector("#ket-qua-thoi-tiet");
+
+timCity.addEventListener("click", async () => {
+  try {
+    const tenCity = cityInput.value;
+    const keyapi = "fdd094c187636b83850c5cc2bc0dab0a";
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${tenCity}&appid=${keyapi}&units=metric&lang=vi`;
+    const response = await fetch(url);
+    if (response.status === 404) {
+      throw new Error("sai tên thành phố");
+    }
+    const data = await response.json();
+    ketquaThoitiet.innerHTML = `
+<div class="weather-card">
+  <h3>Thành phố: ${data.name}</h3>
+  <p>Nhiệt độ: ${data.main.temp}</p>
+  <p>Độ ẩm: ${data.main.humidity}</p>
+</div>
+
+  `;
+  } catch (error) {
+    if (error.message === "sai tên thành phố") {
+      ketquaThoitiet.innerHTML = `<p>Nhập sai roài ,làm gì có thành phố nào tên đó nhập lại đi!! <p/>`;
+    } else {
+      ketquaThoitiet.innerHTML = `
+      <p style="color:red">
+      Rồi xong mất mạng rồi!
+      </p>
+      `;
+    }
+
+    console.log(error);
+  }
+});

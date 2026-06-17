@@ -7,7 +7,8 @@ html {
 }
 body {
   margin: 0;
-  background: rgba(153, 146, 146, 0.301);
+  background: #0f1115;
+  color: #f3f5f7;
   font-family: "Open Sans", sans-serif;
   padding-top: 70px;
 }
@@ -25,13 +26,17 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(255, 255, 255);
+  background: #171a21;
+  border: 1px solid #2c313a;
   gap: 100px;
   height: 50px;
   width: 100%;
   max-width: 1200px;
   border-radius: 30px;
   margin: 0 auto;
+}
+.around span {
+  color: #f3f5f7;
 }
 .menu-item {
   display: flex;
@@ -47,12 +52,15 @@ header {
   display: flex;
   align-items: center;
   text-decoration: none;
-  background: rgba(245, 245, 245, 0.664);
+  background: #20242d;
+  color: #f3f5f7;
   width: max-content;
   height: 35px;
   border-radius: 35px;
   padding: 0 10px;
-  color: black;
+}
+.menu-item > a:hover {
+  background: #2a2f3a;
 }
 section {
   width: 100%;
@@ -61,7 +69,10 @@ section {
   gap: 10px;
 }
 section > div {
-  background: rgba(255, 255, 255, 0.938);
+  background: #171a21;
+  border: 1px solid #2c313a;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.801);
+
   max-width: 590px;
   width: 100%;
   height: 500px;
@@ -104,11 +115,18 @@ section > div {
   max-width: 600px;
   border: 0;
   border-radius: 20px;
-  background: #3b3a5a;
+  background: #474dbdbb;
   color: white;
   font-weight: 700;
   cursor: pointer;
   margin: 0 auto;
+}
+input::placeholder {
+  color: #8d95a3;
+}
+
+button:hover {
+  background: #7c83ff;
 }
 .cung-hoang-dao > .ket-qua {
   display: flex;
@@ -135,11 +153,12 @@ section > div {
 
 .user-card {
   min-height: 190px;
-  border: 1px solid #e3e6eb;
+  background: #20242d;
+  border: 1px solid #343a46;
+  color: #f3f5f7;
   border-radius: 18px;
   padding: 18px;
   text-align: center;
-  background: #ffffff;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 }
 
@@ -158,7 +177,7 @@ section > div {
 
 .user-card p {
   margin: 0;
-  color: #606875;
+  color: #a5adba;
   font-size: 13px;
   word-break: break-word;
 }
@@ -168,7 +187,23 @@ section > div {
   margin-top: 10px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: #f0f2f5;
+  background: #2a2f3a;
+  color: #d7dbff;
   font-size: 12px;
   font-weight: 700;
+}
+/* tra cuu quoc gia */
+
+/* thoitiet */
+#ket-qua-thoi-tiet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.inputstyle {
+  height: 45px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 5px;
 }
