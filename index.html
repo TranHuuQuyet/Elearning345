@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elearning456</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+    </style>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -71,11 +74,10 @@
       </div>
     </header>
     <section class="cung-hoang-dao" id="cung-hoang-dao">
-      <h1>Ứng dụng Cung hoàng đạo</h1>
+      <div class="tra-cuu-ket-qua">
+        <h1>Ứng dụng Cung hoàng đạo</h1>
 
-      <label>Nhập ngày tháng năm sinh để tra cứu</label>
-      <div class="birth-date">
-        <!-- Ngày -->
+        <label>Nhập ngày tháng năm sinh để tra cứu</label>
         <select id="day">
           <option value="">Ngày sinh</option>
           <option value="1">1</option>
@@ -135,33 +137,42 @@
           min="1900"
           max="2025"
         />
+        <button type="submit">Tra cứu</button>
       </div>
-      <button type="submit">Tra cứu</button>
+
       <div class="ket-qua">
         <span>Can chi năm sinh:</span>
         <span>Cung hoàng đạo:</span>
       </div>
     </section>
     <section class="danh-ba" id="danh-ba">
-      <h1>Danh bạ người dùng ngẫu nhiên</h1>
-      <button>Tải danh bạ</button>
-      <div class="user-card">
+      <div class="tra-cuu-ket-qua">
+        <h1>Danh bạ người dùng ngẫu nhiên</h1>
+        <button>Tải danh bạ</button>
+      </div>
+      <div class="ket-qua">
         <img src="avatar.jpg" alt="" />
         <h3>John Smith</h3>
         <p>john@example.com</p>
         <span>United States</span>
       </div>
     </section>
-    <section class="tra-cuu" id="tra-cuu">
-      <h1>Tra cứu quốc gia.</h1>
-      <input type="text" placeholder="Nhập tên quốc gia" id="" />
-      <button>Tìm kiếm</button>
+    <section class="tra-cuu-quoc-gia" id="tra-cuu">
+      <div class="tra-cuu-ket-qua">
+        <h1>Tra cứu quốc gia.</h1>
+        <input type="text" placeholder="Nhập tên quốc gia" id="" />
+        <button>Tìm kiếm</button>
+      </div>
+      <div class="ket-qua"></div>
     </section>
     <section class="thoi-tiet" id="thoi-tiet">
-      <h1>Ứng dụng thời tiết thu nhỏ</h1>
-      <span>Tìm kiếm thành phố</span>
-      <input type="text" placeholder="Nhập tên thành phố" id="" />
-      <button>Xem thời tiêt</button>
+      <div class="tra-cuu-ket-qua">
+        <h1>Ứng dụng thời tiết thu nhỏ</h1>
+        <span>Tìm kiếm thành phố</span>
+        <input type="text" placeholder="Nhập tên thành phố" id="" />
+        <button>Xem thời tiêt</button>
+      </div>
+      <div class="ket-qua"></div>
     </section>
     <footer></footer>
   </body>

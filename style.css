@@ -1,11 +1,26 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
 body {
   margin: 0;
   background: rgba(153, 146, 146, 0.301);
+  font-family: "Open Sans", sans-serif;
+  padding-top: 70px;
 }
 /* header */
+header {
+  position: fixed;
+  top: 3%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  padding: 10px 16px 0;
+}
 .around {
   display: flex;
   justify-content: center;
@@ -16,7 +31,7 @@ body {
   width: 100%;
   max-width: 1200px;
   border-radius: 30px;
-  margin: 10px auto;
+  margin: 0 auto;
 }
 .menu-item {
   display: flex;
@@ -32,20 +47,27 @@ body {
   display: flex;
   align-items: center;
   text-decoration: none;
-  background: whitesmoke;
+  background: rgba(245, 245, 245, 0.664);
   width: max-content;
   height: 35px;
   border-radius: 35px;
   padding: 0 10px;
   color: black;
 }
-
-/* cunghoangdao */
 section {
-  background: rgb(255, 255, 255);
-  height: 500px;
   width: 100%;
-  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+section > div {
+  background: rgba(255, 255, 255, 0.938);
+  max-width: 590px;
+  width: 100%;
+  height: 500px;
+  margin-top: 10px;
   border-radius: 30px;
-  margin: 10px auto;
+}
+.cung-hoang-dao div {
+  margin-top: 20px;
 }
