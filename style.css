@@ -123,3 +123,52 @@ section > div {
   border: 1px solid;
   border-radius: 10px;
 }
+/* danh sach danh ba */
+#danh-sach {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 24px;
+  overflow-y: auto;
+  align-content: start;
+}
+
+.user-card {
+  min-height: 190px;
+  border: 1px solid #e3e6eb;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.user-card img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user-card h3 {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+.user-card p {
+  margin: 0;
+  color: #606875;
+  font-size: 13px;
+  word-break: break-word;
+}
+
+.user-card span {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f0f2f5;
+  font-size: 12px;
+  font-weight: 700;
+}

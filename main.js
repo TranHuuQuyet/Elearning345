@@ -74,3 +74,29 @@ tracuuBnt.addEventListener("click", () => {
   canchiResult.textContent = "Can chi năm sinh: " + can;
   diachiResult.textContent = "Cung hoàng đạo: " + dia;
 });
+//danh ba nguoi dung ngau nhien
+const taiDanhbaBtn = document.querySelector("#tai-danh-ba");
+const danhSach = document.querySelector("#danh-sach");
+
+taiDanhbaBtn.addEventListener("click", async () => {
+  try {
+    danhSach.innerHTML = "";
+    const response = await fetch("https://randomuser.me/api/?results=10");
+    const data = await response.json();
+    const users = data.results;
+
+    users.forEach((user) => {
+      danhSach.innerHTML += `
+     <div class="user-card">
+        <img src="${user.picture.large}" alt="Avatar">
+        <h3>${user.name.first} ${user.name.last}</h3>
+        <p>${user.email}</p>
+        <span>${user.location.country}</span>
+      </div>
+    `;
+    });
+  } catch (error) {
+    danhSach.innerHTML = "Khong tai duoc du lieu";
+    console.log(Error);
+  }
+});
