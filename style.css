@@ -68,6 +68,58 @@ section > div {
   margin-top: 10px;
   border-radius: 30px;
 }
+
 .cung-hoang-dao div {
   margin-top: 20px;
+}
+.cung-hoang-dao > .tra-cuu-ket-qua div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100px;
+  width: 480px;
+  margin: 0px auto;
+}
+.cung-hoang-dao > .tra-cuu-ket-qua div select,
+.cung-hoang-dao > .tra-cuu-ket-qua div input {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+}
+.tra-cuu-ket-qua label {
+  color: #606875;
+  font-size: 15px;
+}
+.tra-cuu-ket-qua {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 60px;
+}
+.tra-cuu-ket-qua button {
+  height: 45px;
+  width: 100%;
+  max-width: 600px;
+  border: 0;
+  border-radius: 20px;
+  background: #3b3a5a;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.cung-hoang-dao > .ket-qua {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.cung-hoang-dao > .ket-qua span {
+  height: 50px;
+  width: 300px;
+  border: 1px solid;
+  border-radius: 10px;
 }

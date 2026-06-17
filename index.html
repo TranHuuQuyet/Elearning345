@@ -76,73 +76,74 @@
     <section class="cung-hoang-dao" id="cung-hoang-dao">
       <div class="tra-cuu-ket-qua">
         <h1>Ứng dụng Cung hoàng đạo</h1>
-
         <label>Nhập ngày tháng năm sinh để tra cứu</label>
-        <select id="day">
-          <option value="">Ngày sinh</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-          <option value="21">21</option>
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-          <option value="25">25</option>
-          <option value="26">26</option>
-          <option value="27">27</option>
-          <option value="28">28</option>
-          <option value="29">29</option>
-          <option value="30">30</option>
-        </select>
+        <div>
+          <select id="day">
+            <option value="">Ngày sinh</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+          </select>
 
-        <!-- Tháng -->
-        <select id="month">
-          <option value="">Tháng sinh</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-        </select>
+          <!-- Tháng -->
+          <select id="month">
+            <option value="">Tháng sinh</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
 
-        <!-- Năm -->
-        <input
-          type="number"
-          id="year"
-          placeholder="Năm sinh"
-          min="1900"
-          max="2025"
-        />
-        <button type="submit">Tra cứu</button>
+          <!-- Năm -->
+          <input
+            type="number"
+            id="year"
+            placeholder="Năm sinh"
+            min="1900"
+            max="2025"
+          />
+        </div>
+        <button type="submit" id="tim-kiem">Tra cứu</button>
       </div>
 
       <div class="ket-qua">
-        <span>Can chi năm sinh:</span>
-        <span>Cung hoàng đạo:</span>
+        <span id="can-chi">Can chi năm sinh:</span>
+        <span id="dia-chi">Cung hoàng đạo:</span>
       </div>
     </section>
     <section class="danh-ba" id="danh-ba">
@@ -175,5 +176,6 @@
       <div class="ket-qua"></div>
     </section>
     <footer></footer>
+    <script src="main.js"></script>
   </body>
 </html>
