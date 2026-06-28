@@ -62,17 +62,129 @@ const Cunghoangdao = (day, month) => {
     return "Song Ngư";
   }
 };
+const zodiacSVG = {
+  "Bạch Dương": `
+    <svg viewBox="0 0 24 24">
+      <path d="M7 20V8c0-3 2-5 5-5s5 2 5 5v12"/>
+      <circle cx="7" cy="8" r="2"/>
+      <circle cx="17" cy="8" r="2"/>
+    </svg>
+  `,
+
+  "Kim Ngưu": `
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M6 20c0-4 3-6 6-6s6 2 6 6"/>
+    </svg>
+  `,
+
+  "Song Tử": `
+    <svg viewBox="0 0 24 24">
+      <path d="M8 3v18M16 3v18"/>
+      <path d="M6 6h12M6 18h12"/>
+    </svg>
+  `,
+
+  "Cự Giải": `
+    <svg viewBox="0 0 24 24">
+      <path d="M6 10c2-4 10-4 12 0"/>
+      <path d="M6 14c2 4 10 4 12 0"/>
+    </svg>
+  `,
+
+  "Sư Tử": `
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="10" r="4"/>
+      <path d="M12 14v6"/>
+      <path d="M8 18h8"/>
+    </svg>
+  `,
+
+  "Xử Nữ": `
+    <svg viewBox="0 0 24 24">
+      <path d="M6 20V4"/>
+      <path d="M6 6c4-4 8 0 8 4s-4 4-4 8 4 4 4 4"/>
+    </svg>
+  `,
+
+  "Thiên Bình": `
+    <svg viewBox="0 0 24 24">
+      <path d="M12 4v10"/>
+      <path d="M6 14h12"/>
+      <circle cx="12" cy="4" r="2"/>
+    </svg>
+  `,
+
+  "Bọ Cạp": `
+    <svg viewBox="0 0 24 24">
+      <path d="M6 6v12"/>
+      <path d="M6 18l3-3 3 3 3-3 3 3"/>
+    </svg>
+  `,
+
+  "Nhân Mã": `
+    <svg viewBox="0 0 24 24">
+      <path d="M6 18l12-12"/>
+      <path d="M10 6h8v8"/>
+    </svg>
+  `,
+
+  "Ma Kết": `
+    <svg viewBox="0 0 24 24">
+      <path d="M6 18c4-6 4-12 8-12s4 6 4 12"/>
+    </svg>
+  `,
+
+  "Bảo Bình": `
+    <svg viewBox="0 0 24 24">
+      <path d="M4 10c2 2 4-2 6 0s4 2 6 0 4-2 4 0"/>
+      <path d="M4 14c2 2 4-2 6 0s4 2 6 0 4-2 4 0"/>
+    </svg>
+  `,
+
+  "Song Ngư": `
+    <svg viewBox="0 0 24 24">
+      <path d="M6 6c4 4 4 8 0 12"/>
+      <path d="M18 6c-4 4-4 8 0 12"/>
+      <circle cx="12" cy="12" r="2"/>
+    </svg>
+  `,
+};
 
 tracuuBnt.addEventListener("click", () => {
   const day = Number(dayInput.value);
   const month = Number(monthInput.value);
   const year = Number(yearInput.value);
 
+  if (!day || !month || !year) {
+    Toastify({
+      text: "Vui lòng nhập đầy đủ ngày tháng năm sinh",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      close: true,
+      stopOnFocus: true,
+      style: {
+        background: "#d62222",
+      },
+    }).showToast();
+    return;
+  }
   const can = layCan_Diachi(year);
-  const dia = Cunghoangdao(day, month);
+  const zodiacName = Cunghoangdao(day, month);
 
   canchiResult.textContent = "Can chi năm sinh: " + can;
-  diachiResult.textContent = "Cung hoàng đạo: " + dia;
+  diachiResult.textContent = "Cung hoàng đạo: " + zodiacName;
+  const svgBox = document.getElementById("zodiac-svg");
+
+  if (zodiacSVG[zodiacName]) {
+    svgBox.innerHTML = zodiacSVG[zodiacName];
+    svgBox.style.display = "block";
+  } else {
+    svgBox.innerHTML = "";
+    svgBox.style.display = "none";
+  }
+
   Toastify({
     text: "Tra cứu thành công",
     duration: 3000,

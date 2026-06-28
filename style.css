@@ -95,6 +95,19 @@ section > div {
   height: 40px;
   border-radius: 10px;
 }
+#zodiac-svg {
+  width: 120px;
+  height: 120px;
+  display: none;
+}
+
+#zodiac-svg svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
 .tra-cuu-ket-qua label {
   color: #606875;
   font-size: 15px;
