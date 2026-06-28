@@ -9,6 +9,7 @@
     </style>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
       <div class="around">
@@ -40,9 +41,9 @@
                 d="M160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h560q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80H160Zm280-320q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm-240 160h480q-36-45-98-72.5T440-340q-80 0-142 27.5T200-240Z"
               />
             </svg>
-            Danh bạ</a
+            Danh bạ người dùng</a
           >
-          <a href="#tra-cuu">
+          <a href="#tinh">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="20"
@@ -54,8 +55,8 @@
                 d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
               />
             </svg>
-            Tra cứu</a
-          >
+            Thông tin cư trú
+          </a>
           <a href="#thoi-tiet">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +69,7 @@
                 d="M240-200q-83 0-141.5-58.5T40-400q0-76 50-132.5T214-599q25-86 97-143.5T480-800q117 0 198.5 81.5T760-520q66 8 113 58.5T920-340q0 58-41 99t-99 41H240Z"
               />
             </svg>
-            Thời tiết</a
+            Thời tiết thu nhỏ</a
           >
         </nav>
       </div>
@@ -110,6 +111,7 @@
             <option value="28">28</option>
             <option value="29">29</option>
             <option value="30">30</option>
+            <option value="31">31</option>
           </select>
 
           <!-- Tháng -->
@@ -135,15 +137,15 @@
             id="year"
             placeholder="Năm sinh"
             min="1900"
-            max="2025"
+            max="2026"
           />
         </div>
         <button type="submit" id="tim-kiem">Tra cứu</button>
       </div>
 
       <div class="ket-qua">
-        <span id="can-chi">Can chi năm sinh:</span>
-        <span id="dia-chi">Cung hoàng đạo:</span>
+        <span id="can-chi"></span>
+        <span id="dia-chi"></span>
       </div>
     </section>
     <section class="danh-ba" id="danh-ba">
@@ -153,19 +155,133 @@
       </div>
       <div id="danh-sach"></div>
     </section>
-    <section class="tra-cuu-quoc-gia" id="tra-cuu">
-      <div class="tra-cuu-ket-qua">
-        <h1>Tra cứu quốc gia.</h1>
+    <section class="thong-tin-cu-tru" id="cu-tru">
+      <form class="tra-cuu-ket-qua" id="formDangKy">
+        <h1>Đăng ký thông tin cư trú cho công dân</h1>
+
         <input
           type="text"
-          placeholder="Nhập tên quốc gia"
-          id="quoc-gia"
+          id="hoten"
           class="inputstyle"
+          placeholder="Họ và tên"
+          required
         />
-        <button id="tim-quoc-gia">Tìm kiếm</button>
-      </div>
-      <div id="ket-qua-tim"></div>
+
+        <input
+          type="text"
+          id="cccd"
+          class="inputstyle"
+          placeholder="Số CCCD"
+          required
+        />
+
+        <input
+          type="tel"
+          id="phone"
+          class="inputstyle"
+          placeholder="Số điện thoại"
+          required
+        />
+
+        <input
+          type="email"
+          id="email"
+          class="inputstyle"
+          placeholder="Email"
+          required
+        />
+
+        <select id="gioitinh" class="inputstyle" required>
+          <option value="">Giới tính</option>
+          <option value="Nam">Nam</option>
+          <option value="Nữ">Nữ</option>
+          <option value="Khác">Khác</option>
+        </select>
+
+        <div class="birth-group">
+          <select id="day" required>
+            <option value="">Ngày sinh</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+          </select>
+
+          <select id="month" required>
+            <option value="">Tháng sinh</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+
+          <input
+            type="number"
+            id="year"
+            placeholder="Năm sinh"
+            min="1900"
+            max="2026"
+            required
+          />
+        </div>
+
+        <select id="tinh" class="inputstyle" required>
+          <option value="">-- Chọn tỉnh --</option>
+        </select>
+
+        <select id="xa" class="inputstyle" required>
+          <option value="">-- Chọn xã --</option>
+        </select>
+
+        <input
+          type="text"
+          id="address-input"
+          class="inputstyle"
+          placeholder="Nhập địa chỉ cụ thể"
+          required
+        />
+
+        <button type="submit">Đăng ký</button>
+      </form>
+
+      <div id="thong-tin"></div>
     </section>
+
     <section class="thoi-tiet" id="thoi-tiet">
       <div class="tra-cuu-ket-qua">
         <h1>Ứng dụng thời tiết thu nhỏ</h1>
@@ -180,7 +296,27 @@
       </div>
       <div id="ket-qua-thoi-tiet"></div>
     </section>
-    <footer></footer>
+    <button id="btnTop" title="Lên đầu trang">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 19V5" />
+        <path d="M5 12l7-7 7 7" />
+      </svg>
+    </button>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="main.js"></script>
   </body>
 </html>

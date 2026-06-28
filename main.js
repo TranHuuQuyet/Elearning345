@@ -73,6 +73,17 @@ tracuuBnt.addEventListener("click", () => {
 
   canchiResult.textContent = "Can chi năm sinh: " + can;
   diachiResult.textContent = "Cung hoàng đạo: " + dia;
+  Toastify({
+    text: "Tra cứu thành công",
+    duration: 3000,
+    gravity: "top",
+    position: "right",
+    close: true,
+    stopOnFocus: true,
+    style: {
+      background: "#28a745",
+    },
+  }).showToast();
 });
 //danh ba nguoi dung ngau nhien
 const taiDanhbaBtn = document.querySelector("#tai-danh-ba");
@@ -94,23 +105,108 @@ taiDanhbaBtn.addEventListener("click", async () => {
         <span>${user.location.country}</span>
       </div>
     `;
+      Toastify({
+        text: "Tải danh bạ thành công!",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        close: true,
+        stopOnFocus: true,
+        style: {
+          background: "#28a745",
+        },
+      }).showToast();
     });
   } catch (error) {
     danhSach.innerHTML = "Khong tai duoc du lieu";
-    console.log(Error);
+    console.log(error);
   }
 });
-//tra cuu quoc gia// lỗi API
-const quocgiaInput = document.querySelector("#quoc-gia");
-const timKiem = document.querySelector("#tim-quoc-gia");
-const ketQua = document.querySelector("#ket-qua-tim");
+//Đăng kí thông tin cư trú
+const chonTinh = document.querySelector("#tinh");
+const chonXa = document.querySelector("#xa");
+const taiDulieu = async () => {
+  try {
+    const response = await fetch("https://provinces.open-api.vn/api/v2/p/");
+    const data = await response.json();
 
-timKiem.addEventListener("click", async () => {
-  const tenQuocgia = quocgiaInput.value.trim();
-  const url = `https://restcountries.com/v3.1/name/${tenQuocgia}`;
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log(data);
+    chonTinh.innerHTML = '<option value="">--chọn tỉnh--</option>';
+    data.forEach((province) => {
+      chonTinh.innerHTML += `<option value="${province.code}">${province.name}</option>`;
+    });
+
+    chonTinh.addEventListener("change", async () => {
+      const code = chonTinh.value;
+      if (!code) return;
+
+      const response = await fetch(
+        `https://provinces.open-api.vn/api/v2/p/${code}?depth=2`,
+      );
+
+      const data = await response.json();
+
+      chonXa.innerHTML = `<option value="">--Chọn xã--</option>`;
+
+      data.wards.forEach((ward) => {
+        chonXa.innerHTML += `
+            <option value="${ward.code}">
+                ${ward.name}
+            </option>
+        `;
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+taiDulieu();
+const form = document.getElementById("formDangKy");
+const ketQua = document.getElementById("thong-tin");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const hoten = document.getElementById("hoten").value;
+  const cccd = document.getElementById("cccd").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const gioitinh = document.getElementById("gioitinh").value;
+
+  const day = document.getElementById("day").value;
+  const month = document.getElementById("month").value;
+  const year = document.getElementById("year").value;
+
+  const tinh = document.getElementById("tinh");
+  const xa = document.getElementById("xa");
+
+  const tenTinh = tinh.options[tinh.selectedIndex].text;
+  const tenXa = xa.options[xa.selectedIndex].text;
+
+  const diaChi = document.getElementById("address-input").value;
+
+  ketQua.innerHTML = `
+       <div class = "hien-thong-tin">
+        <h2>Thông tin đã đăng ký</h2>
+        <p><strong>Họ và tên:</strong> ${hoten}</p>
+        <p><strong>CCCD:</strong> ${cccd}</p>
+        <p><strong>Số điện thoại:</strong> ${phone}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Giới tính:</strong> ${gioitinh}</p>
+        <p><strong>Ngày sinh:</strong> ${day}/${month}/${year}</p>
+        <p><strong>Địa chỉ:</strong> ${diaChi}, ${tenXa}, ${tenTinh}</p>
+       </div>
+    `;
+  Toastify({
+    text: "Đăng ký cư trú thành công!",
+    duration: 3000,
+    gravity: "top",
+    position: "right",
+    close: true,
+    stopOnFocus: true,
+    style: {
+      background: "#28a745",
+    },
+  }).showToast();
 });
 //thoi tiet mini
 const cityInput = document.querySelector("#city-input");
@@ -135,9 +231,20 @@ timCity.addEventListener("click", async () => {
 </div>
 
   `;
+    Toastify({
+      text: "Tra cứu thời tiết thành công!",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      close: true,
+      stopOnFocus: true,
+      style: {
+        background: "#28a745",
+      },
+    }).showToast();
   } catch (error) {
     if (error.message === "sai tên thành phố") {
-      ketquaThoitiet.innerHTML = `<p>Nhập sai roài ,làm gì có thành phố nào tên đó nhập lại đi!! <p/>`;
+      ketquaThoitiet.innerHTML = `<p>Tên thành phố không tìm thấy. <p/>`;
     } else {
       ketquaThoitiet.innerHTML = `
       <p style="color:red">
@@ -148,4 +255,21 @@ timCity.addEventListener("click", async () => {
 
     console.log(error);
   }
+});
+//btn
+const btnTop = document.getElementById("btnTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    btnTop.classList.add("show");
+  } else {
+    btnTop.classList.remove("show");
+  }
+});
+
+btnTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });
