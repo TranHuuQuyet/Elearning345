@@ -280,7 +280,14 @@ section > #thong-tin {
   width: 24px;
   height: 24px;
 }
-@media (max-width < 768px) {
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #f3f5f7;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
   body {
     padding-top: 90px;
   }
@@ -289,6 +296,7 @@ section > #thong-tin {
     top: 0;
     padding: 8px;
   }
+
   .hamburger {
     display: block;
     position: absolute;
@@ -381,11 +389,4 @@ section > #thong-tin {
     right: 15px;
     bottom: 15px;
   }
-}
-.hamburger {
-  display: none;
-  background: transparent;
-  border: none;
-  color: #f3f5f7;
-  cursor: pointer;
 }
