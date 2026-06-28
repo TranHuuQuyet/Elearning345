@@ -172,9 +172,9 @@ form.addEventListener("submit", (e) => {
   const email = document.getElementById("email").value;
   const gioitinh = document.getElementById("gioitinh").value;
 
-  const day = document.getElementById("day").value;
-  const month = document.getElementById("month").value;
-  const year = document.getElementById("year").value;
+  const day = document.getElementById("ngay").value;
+  const month = document.getElementById("thang").value;
+  const year = document.getElementById("nam").value;
 
   const tinh = document.getElementById("tinh");
   const xa = document.getElementById("xa");
