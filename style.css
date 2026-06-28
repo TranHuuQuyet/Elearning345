@@ -280,7 +280,7 @@ section > #thong-tin {
   width: 24px;
   height: 24px;
 }
-@media (max-width: 768px) {
+@media (max-width < 768px) {
   body {
     padding-top: 90px;
   }
